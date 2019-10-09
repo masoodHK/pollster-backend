@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from .models import Poll, Option, Comments
@@ -5,13 +6,15 @@ from categories.models import Categories
 
 class PollsSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Categories.objects.all())
+    created_by = serializers.ReadOnlyField(source="created_by.username")
     class Meta:
         model = Poll
         fields = (
             'id', 
             'question', 
             'date_created', 
-            'date_updated', 
+            'date_updated',
+            'created_by', 
             'poll_type',
             'is_active',
             'ends_on',
@@ -33,13 +36,15 @@ class OptionsSerializer(serializers.ModelSerializer):
 
 class CommentsSerializer(serializers.ModelSerializer):
     poll = serializers.PrimaryKeyRelatedField(queryset=Poll.objects.all())
+    made_by = serializers.ReadOnlyField(source="made_by.username")
     class Meta:
         model = Comments
         fields = (
             'id',
             'poll',
             'comment_text',
-            'date_created', 
+            'date_created',
+            'made_by', 
             'date_updated', 
         )
-        read_only_fields = ['id']
+        read_only_fields = ['id', 'made_by']

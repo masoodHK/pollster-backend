@@ -47,9 +47,13 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'allauth',
     'allauth.account',
+    'corsheaders',
+    'channels'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +61,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:1234",
 ]
 
 ROOT_URLCONF = 'pollster_backend.urls'
@@ -79,6 +87,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pollster_backend.wsgi.application'
 
+ASGI_APPLICATION = 'pollster_backend.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -142,12 +151,16 @@ REST_FRAMEWORK = {
     ),
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 REST_USE_JWT = True
 
 SITE_ID = 1
 
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_UNIQUE_EMAIL = True
+
+AUTH_USER_MODEL = 'userprofile.UserProfile'

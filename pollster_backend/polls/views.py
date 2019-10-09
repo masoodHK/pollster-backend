@@ -3,14 +3,14 @@ from rest_framework import generics, mixins
 from .models import Poll, Option, Comments
 
 # Create your views here.
-class PollsView(mixins.CreateModelMixin, generics.ListAPIView):
+class PollsView(generics.ListCreateAPIView):
     serializer_class = PollsSerializer
 
     def get_queryset(self):
         return Poll.objects.all()
 
-    def post(self, request, *args, **kwargs):
-        self.create(request, *args, **kwargs)
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
 
 class PollsRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Poll.objects.all()
@@ -45,11 +45,11 @@ class CommentsRUDView(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return self.queryset
 
-class CommentsView(generics.ListAPIView):
+class CommentsView(generics.ListCreateAPIView):
     serializer_class = CommentsSerializer
 
     def get_queryset(self):
         return Comments.objects.filter(poll=self.kwargs['poll_id'])
 
-    def post(self, request, *args, **kwargs):
-        pass
+    def perform_create(self, serializer):
+        serializer.save(made_by=self.request.user)

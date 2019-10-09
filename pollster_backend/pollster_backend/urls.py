@@ -21,5 +21,7 @@ urlpatterns = [
     path('api/polls/', include('polls.urls')),
     path('api/auth/', include('rest_auth.urls')),
     path('api/categories/', include('categories.urls')),
-    path('api/auth/registration', include('rest_auth.registration.urls'))
+    path('api/auth/registration', include('rest_auth.registration.urls')),
+    path('api/users/', include('userprofile.urls')),
+    path('api/chats/', include('chats.urls'))
 ]

@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth import get_user_model
 
 from categories.models import Categories
 
@@ -9,6 +10,7 @@ from categories.models import Categories
 class Poll(models.Model):
     question = models.CharField('Question for the poll',max_length=200)
     is_active = models.BooleanField(default=True)
+    created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
     ends_on = models.DateTimeField()
     poll_type = models.CharField('Type of Poll', max_length=100)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -33,9 +35,13 @@ class Option(models.Model):
 
 class Comments(models.Model):
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
+    made_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
     comment_text = models.CharField('The comment on the poll', max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Comments"
 
     def __str__(self):
     	return self.comment_text
