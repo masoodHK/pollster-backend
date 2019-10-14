@@ -6,7 +6,14 @@ from .models import UserProfile
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = '__all__'
+        exclude = [
+            'password', 
+            'groups', 
+            'user_permissions', 
+            'is_staff', 
+            'is_active', 
+            'is_superuser'
+        ]
 
     def create(self, validated_data):
         user = UserProfile(
