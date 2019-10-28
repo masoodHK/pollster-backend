@@ -1,1 +1,1 @@
-web: python pollster_backend/manage.py runserver 0.0.0.0:$PORT --noreload
+web: daphne pollster_backend.asgi:application --port $PORT --bind 0.0.0.0
