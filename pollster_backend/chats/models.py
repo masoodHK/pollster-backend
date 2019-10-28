@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
+from polls.models import Poll
+
 # Create your models here.
 class ChatRoom(models.Model):
     class Meta:
@@ -9,6 +11,7 @@ class ChatRoom(models.Model):
     has_multiple_people = models.BooleanField(default=True)
     chat_name = models.TextField("Name of the Chat Room", null=True, unique=True, max_length=500)
     users = models.ManyToManyField(get_user_model())
+    poll = models.ForeignKey(Poll, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.chat_name

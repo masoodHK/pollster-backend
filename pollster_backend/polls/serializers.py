@@ -7,6 +7,7 @@ from categories.models import Categories
 class PollsSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Categories.objects.all())
     created_by = serializers.ReadOnlyField(source="created_by.username")
+    profile_pic = serializers.CharField(source='created_by.profile_pic_url')
     class Meta:
         model = Poll
         fields = (
@@ -18,7 +19,8 @@ class PollsSerializer(serializers.ModelSerializer):
             'poll_type',
             'is_active',
             'ends_on',
-            'category'
+            'category',
+            'profile_pic'
         )
         read_only_fields = ['id']
 
@@ -37,6 +39,7 @@ class OptionsSerializer(serializers.ModelSerializer):
 class CommentsSerializer(serializers.ModelSerializer):
     poll = serializers.PrimaryKeyRelatedField(queryset=Poll.objects.all())
     made_by = serializers.ReadOnlyField(source="made_by.username")
+    profile_pic = serializers.CharField(source='made_by.profile_pic_url')
     class Meta:
         model = Comments
         fields = (
@@ -45,6 +48,7 @@ class CommentsSerializer(serializers.ModelSerializer):
             'comment_text',
             'date_created',
             'made_by', 
-            'date_updated', 
+            'date_updated',
+            'profile_pic' 
         )
-        read_only_fields = ['id', 'made_by']
+        read_only_fields = ['id', 'made_by', 'profile_pic']
