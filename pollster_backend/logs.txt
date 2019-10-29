@@ -1,0 +1,100 @@
+2019-10-29T19:59:49.775037+00:00 app[web.1]: cls().run(sys.argv[1:])
+2019-10-29T19:59:49.77508+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/cli.py", line 252, in run
+2019-10-29T19:59:49.775411+00:00 app[web.1]: application = import_by_path(args.application)
+2019-10-29T19:59:49.775452+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/utils.py", line 12, in import_by_path
+2019-10-29T19:59:49.775636+00:00 app[web.1]: target = importlib.import_module(module_path)
+2019-10-29T19:59:49.775677+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/importlib/__init__.py", line 126, in import_module
+2019-10-29T19:59:49.775922+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2019-10-29T19:59:49.775961+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+2019-10-29T19:59:49.776217+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+2019-10-29T19:59:49.77641+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+2019-10-29T19:59:49.77661+00:00 app[web.1]: ModuleNotFoundError: No module named 'pollster_backend.asgi'
+2019-10-29T20:07:40.599131+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/robots.txt" host=pollster-backend.herokuapp.com request_id=7dc22f3b-2dce-4db0-ac8b-36613628082c fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=http
+2019-10-29T20:07:42.270577+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pollster-backend.herokuapp.com request_id=c7cbd04a-b960-424b-aeb9-2ac81a097d9a fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
+2019-10-29T20:07:44.124089+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=pollster-backend.herokuapp.com request_id=15692a5a-1cd8-452e-af44-1c35c74963b2 fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
+2019-10-29T20:08:09.343039+00:00 app[api]: Starting process with command `pollster_backend/manage.py` by user masood_hasan@msn.com
+2019-10-29T20:08:15.337016+00:00 heroku[run.7056]: State changed from starting to up
+2019-10-29T20:08:22.153277+00:00 heroku[run.7056]: Process exited with status 0
+2019-10-29T20:08:22.195731+00:00 heroku[run.7056]: State changed from up to complete
+2019-10-29T20:08:34.401426+00:00 app[api]: Starting process with command `pollster_backend/manage.py makemigrations` by user masood_hasan@msn.com
+2019-10-29T20:08:42.766901+00:00 heroku[run.7062]: State changed from starting to up
+2019-10-29T20:08:53.035419+00:00 heroku[run.7062]: Process exited with status 0
+2019-10-29T20:08:53.098609+00:00 heroku[run.7062]: State changed from up to complete
+2019-10-29T20:09:02.843657+00:00 app[api]: Starting process with command `pollster_backend/manage.py migrate` by user masood_hasan@msn.com
+2019-10-29T20:09:10.154405+00:00 heroku[run.2121]: State changed from starting to up
+2019-10-29T20:09:20.910018+00:00 heroku[run.2121]: Process exited with status 1
+2019-10-29T20:09:20.961993+00:00 heroku[run.2121]: State changed from up to complete
+2019-10-29T20:09:54.105437+00:00 app[api]: Starting process with command `pollster_backend/manage.py migrate userprofile` by user masood_hasan@msn.com
+2019-10-29T20:09:59.548809+00:00 heroku[run.6800]: State changed from starting to up
+2019-10-29T20:10:06.785309+00:00 heroku[run.6800]: Process exited with status 1
+2019-10-29T20:10:06.826413+00:00 heroku[run.6800]: State changed from up to complete
+2019-10-29T20:10:15.151045+00:00 app[api]: Starting process with command `pollster_backend/manage.py migrate polls` by user masood_hasan@msn.com
+2019-10-29T20:10:23.068521+00:00 heroku[run.8070]: State changed from starting to up
+2019-10-29T20:10:33.664449+00:00 heroku[run.8070]: Process exited with status 1
+2019-10-29T20:10:33.710079+00:00 heroku[run.8070]: State changed from up to complete
+2019-10-29T20:10:46.042094+00:00 app[api]: Starting process with command `pollster_backend/manage.py makemigrations polls` by user masood_hasan@msn.com
+2019-10-29T20:10:52.09803+00:00 heroku[run.3174]: State changed from starting to up
+2019-10-29T20:11:00.104873+00:00 heroku[run.3174]: Process exited with status 0
+2019-10-29T20:11:00.1478+00:00 heroku[run.3174]: State changed from up to complete
+2019-10-29T20:11:33.988114+00:00 app[api]: Starting process with command `pollster_backend/manage.py makemigrations userprofile` by user masood_hasan@msn.com
+2019-10-29T20:11:41.290913+00:00 heroku[run.7860]: State changed from starting to up
+2019-10-29T20:11:49.441857+00:00 heroku[run.7860]: Process exited with status 0
+2019-10-29T20:11:49.480116+00:00 heroku[run.7860]: State changed from up to complete
+2019-10-29T20:14:35.55057+00:00 app[api]: Starting process with command `pollster_backend/manage.py makemigrations` by user masood_hasan@msn.com
+2019-10-29T20:14:41.842617+00:00 heroku[run.6925]: State changed from starting to up
+2019-10-29T20:14:49.884813+00:00 heroku[run.6925]: Process exited with status 0
+2019-10-29T20:14:49.929482+00:00 heroku[run.6925]: State changed from up to complete
+2019-10-29T20:15:00.7966+00:00 app[api]: Starting process with command `pollster_backend/manage.py chats` by user masood_hasan@msn.com
+2019-10-29T20:15:09.131778+00:00 heroku[run.2667]: State changed from starting to up
+2019-10-29T20:15:17.265895+00:00 heroku[run.2667]: Process exited with status 1
+2019-10-29T20:15:17.321776+00:00 heroku[run.2667]: State changed from up to complete
+2019-10-29T20:15:29.370818+00:00 app[api]: Starting process with command `pollster_backend/manage.py chat` by user masood_hasan@msn.com
+2019-10-29T20:15:36.556138+00:00 heroku[run.9721]: State changed from starting to up
+2019-10-29T20:15:43.922568+00:00 heroku[run.9721]: Process exited with status 1
+2019-10-29T20:15:43.970974+00:00 heroku[run.9721]: State changed from up to complete
+2019-10-29T20:18:52+00:00 app[api]: Build started by user masood_hasan@msn.com
+2019-10-29T20:19:20.387611+00:00 heroku[web.1]: State changed from crashed to starting
+2019-10-29T20:19:20.065068+00:00 app[api]: Release v22 created by user masood_hasan@msn.com
+2019-10-29T20:19:20.065068+00:00 app[api]: Deploy 2cbd5aee by user masood_hasan@msn.com
+2019-10-29T20:19:27.327288+00:00 heroku[web.1]: Starting process with command `daphne pollster_backend.asgi:application --port 11623 --bind 0.0.0.0`
+2019-10-29T20:19:30.471614+00:00 heroku[web.1]: Process exited with status 1
+2019-10-29T20:19:30.517292+00:00 heroku[web.1]: State changed from starting to crashed
+2019-10-29T20:19:30.52026+00:00 heroku[web.1]: State changed from crashed to starting
+2019-10-29T20:19:30.367253+00:00 app[web.1]: Traceback (most recent call last):
+2019-10-29T20:19:30.367272+00:00 app[web.1]: File "/app/.heroku/python/bin/daphne", line 11, in <module>
+2019-10-29T20:19:30.367379+00:00 app[web.1]: sys.exit(CommandLineInterface.entrypoint())
+2019-10-29T20:19:30.367398+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+2019-10-29T20:19:30.367673+00:00 app[web.1]: cls().run(sys.argv[1:])
+2019-10-29T20:19:30.367676+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/cli.py", line 252, in run
+2019-10-29T20:19:30.367989+00:00 app[web.1]: application = import_by_path(args.application)
+2019-10-29T20:19:30.368005+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/utils.py", line 12, in import_by_path
+2019-10-29T20:19:30.368226+00:00 app[web.1]: target = importlib.import_module(module_path)
+2019-10-29T20:19:30.36823+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/importlib/__init__.py", line 126, in import_module
+2019-10-29T20:19:30.368422+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2019-10-29T20:19:30.368475+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+2019-10-29T20:19:30.368753+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+2019-10-29T20:19:30.368956+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+2019-10-29T20:19:30.369185+00:00 app[web.1]: ModuleNotFoundError: No module named 'pollster_backend.asgi'
+2019-10-29T20:19:31+00:00 app[api]: Build succeeded
+2019-10-29T20:19:36.441297+00:00 heroku[web.1]: Starting process with command `daphne pollster_backend.asgi:application --port 17484 --bind 0.0.0.0`
+2019-10-29T20:19:40.12452+00:00 heroku[web.1]: Process exited with status 1
+2019-10-29T20:19:40.17322+00:00 heroku[web.1]: State changed from starting to crashed
+2019-10-29T20:19:40.031443+00:00 app[web.1]: Traceback (most recent call last):
+2019-10-29T20:19:40.031468+00:00 app[web.1]: File "/app/.heroku/python/bin/daphne", line 11, in <module>
+2019-10-29T20:19:40.031587+00:00 app[web.1]: sys.exit(CommandLineInterface.entrypoint())
+2019-10-29T20:19:40.031596+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+2019-10-29T20:19:40.031774+00:00 app[web.1]: cls().run(sys.argv[1:])
+2019-10-29T20:19:40.031781+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/cli.py", line 252, in run
+2019-10-29T20:19:40.032014+00:00 app[web.1]: application = import_by_path(args.application)
+2019-10-29T20:19:40.032021+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/daphne/utils.py", line 12, in import_by_path
+2019-10-29T20:19:40.03217+00:00 app[web.1]: target = importlib.import_module(module_path)
+2019-10-29T20:19:40.032178+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/importlib/__init__.py", line 126, in import_module
+2019-10-29T20:19:40.032373+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2019-10-29T20:19:40.03238+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+2019-10-29T20:19:40.032525+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+2019-10-29T20:19:40.032637+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+2019-10-29T20:19:40.032777+00:00 app[web.1]: ModuleNotFoundError: No module named 'pollster_backend.asgi'
+2019-10-29T20:19:50.600188+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pollster-backend.herokuapp.com request_id=69820a6a-c110-4887-8804-d2a907a644c4 fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
+2019-10-29T20:20:02.485779+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pollster-backend.herokuapp.com request_id=f266794d-1016-479e-a6c5-4e50cf57c93e fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
+2019-10-29T20:20:12.418984+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=pollster-backend.herokuapp.com request_id=2206fce1-d017-493d-9434-e8bdb28f49cb fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
+2019-10-29T20:21:05.707848+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/admin" host=pollster-backend.herokuapp.com request_id=62b8dfe9-45ce-4583-aa57-ca9f66e455ec fwd="160.184.22.253" dyno= connect= service= status=503 bytes= protocol=https
