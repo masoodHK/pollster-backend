@@ -8,7 +8,7 @@ from categories.models import Categories
 
 # Create your models here.
 class Poll(models.Model):
-    question = models.CharField('Question for the poll',max_length=200)
+    question = models.CharField('Question for the polls',max_length=200)
     is_active = models.BooleanField(default=True)
     created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1, related_name="polls")
     ends_on = models.DateTimeField()

@@ -22,7 +22,7 @@ class Messages(models.Model):
         verbose_name_plural = "Messages"
         
     chat = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)
-    message = models.CharField("The message sent", max_length=500)
+    message = models.CharField("The messages sent", max_length=500)
     sent_at = models.DateTimeField(auto_now_add=True)
     sent_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
 

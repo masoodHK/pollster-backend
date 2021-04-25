@@ -6,7 +6,7 @@ class Categories(models.Model):
         verbose_name_plural = "Categories"
 
     category_name = models.CharField('Name of the Category', max_length=200)
-    category_description = models.CharField('Description of the Category', max_length=500)
+    category_description = models.CharField('Descriptions of the Category', max_length=500)
 
     def __str__(self):
         return self.category_name
